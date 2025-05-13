@@ -1,5 +1,5 @@
 input.onButtonPressed(Button.A, function () {
-    Player.change(LedSpriteProperty.X, 1)
+    Player.change(LedSpriteProperty.X, -1)
 })
 input.onButtonPressed(Button.AB, function () {
     Shoot = game.createSprite(Player.get(LedSpriteProperty.X), Player.get(LedSpriteProperty.Y))
@@ -16,14 +16,16 @@ input.onButtonPressed(Button.AB, function () {
     }
 })
 input.onButtonPressed(Button.B, function () {
-    Player.change(LedSpriteProperty.X, -1)
+    Player.change(LedSpriteProperty.X, 1)
 })
 let EnemyFire: game.LedSprite = null
 let Shoot: game.LedSprite = null
 let Enemy: game.LedSprite = null
 let Player: game.LedSprite = null
+game.setLife(4)
+game.setScore(0)
 Player = game.createSprite(2, 4)
-Enemy = game.createSprite(0, 0)
+Enemy = game.createSprite(0, -4)
 basic.forever(function () {
     Enemy.move(1)
     basic.pause(100)
